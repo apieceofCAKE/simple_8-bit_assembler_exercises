@@ -1,0 +1,20 @@
+;https://schweigi.github.io/assembler-simulator/
+;Exponentiation calculator
+
+MOV C, 0 ;Counter
+MOV A, 1 ;Result
+MOV B, 5 ;Base
+MOV D, 3 ;Exponent
+
+CMP D, 0	;Check for zero exponent. The result is 1
+JE end
+
+loop:
+    MUL B	;Multiply A for B D times using C as counter
+    INC C	;Incrementing the counter
+
+    CMP D, C	;Comparing counter to exponent
+    JNE loop	;Back to loop if D and C aren't equal
+
+end:
+    HLT
