@@ -1,0 +1,23 @@
+;https://schweigi.github.io/assembler-simulator/
+;Division remainder calculator
+
+JMP code_start
+
+code_start:
+	MOV D, 57   		;**input** Dividend
+	MOV B, 8  		;**input** Divisor
+
+	CMP B, 0   		;Checking for zero divisor
+	JZ end
+
+	MOV A, D   		;Moving to register A for operation
+	DIV B   ;Division
+	MOV C, A   		;C is the quotient
+
+remainder_calc:
+	MUL B      ;Quotient times divisor
+	SUB D, A   ;Remainder (dividend minus A) will be stored in D
+	JMP end
+
+end:
+	HLT
