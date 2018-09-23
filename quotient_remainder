@@ -11,7 +11,7 @@ code_start:
 	JZ end
 
 	MOV A, D   		;Moving to register A for operation
-	DIV B   ;Division
+	DIV B  			;Division
 	MOV C, A   		;C is the quotient
 
 remainder_calc:
